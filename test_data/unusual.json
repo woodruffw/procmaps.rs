@@ -1,0 +1,192 @@
+[
+   {
+      "address_range" : {
+         "begin" : 0,
+         "end" : 0
+      },
+      "device" : {
+         "major" : 255,
+         "minor" : 2346278
+      },
+      "inode" : 0,
+      "offset" : 0,
+      "pathname" : {
+         "OtherPseudo" : "[unknownpseudofile]"
+      },
+      "permissions" : {
+         "executable" : false,
+         "private" : false,
+         "readable" : false,
+         "shared" : true,
+         "writable" : false
+      }
+   },
+   {
+      "address_range" : {
+         "begin" : 1,
+         "end" : 1
+      },
+      "device" : {
+         "major" : 0,
+         "minor" : 0
+      },
+      "inode" : 1,
+      "offset" : 1,
+      "pathname" : "Mmap",
+      "permissions" : {
+         "executable" : true,
+         "private" : true,
+         "readable" : true,
+         "shared" : false,
+         "writable" : true
+      }
+   },
+   {
+      "address_range" : {
+         "begin" : 1,
+         "end" : 1
+      },
+      "device" : {
+         "major" : 0,
+         "minor" : 0
+      },
+      "inode" : 1,
+      "offset" : 1,
+      "pathname" : "Mmap",
+      "permissions" : {
+         "executable" : true,
+         "private" : false,
+         "readable" : true,
+         "shared" : true,
+         "writable" : true
+      }
+   },
+   {
+      "address_range" : {
+         "begin" : 1,
+         "end" : 1
+      },
+      "device" : {
+         "major" : 0,
+         "minor" : 0
+      },
+      "inode" : 1,
+      "offset" : 1,
+      "pathname" : "Mmap",
+      "permissions" : {
+         "executable" : false,
+         "private" : false,
+         "readable" : true,
+         "shared" : true,
+         "writable" : false
+      }
+   },
+   {
+      "address_range" : {
+         "begin" : 1,
+         "end" : 1
+      },
+      "device" : {
+         "major" : 0,
+         "minor" : 0
+      },
+      "inode" : 1,
+      "offset" : 1,
+      "pathname" : "Mmap",
+      "permissions" : {
+         "executable" : true,
+         "private" : false,
+         "readable" : false,
+         "shared" : true,
+         "writable" : false
+      }
+   },
+   {
+      "address_range" : {
+         "begin" : 1,
+         "end" : 1
+      },
+      "device" : {
+         "major" : 0,
+         "minor" : 0
+      },
+      "inode" : 1,
+      "offset" : 1,
+      "pathname" : {
+         "Path" : "something"
+      },
+      "permissions" : {
+         "executable" : true,
+         "private" : false,
+         "readable" : false,
+         "shared" : true,
+         "writable" : false
+      }
+   },
+   {
+      "address_range" : {
+         "begin" : 1,
+         "end" : 1
+      },
+      "device" : {
+         "major" : 0,
+         "minor" : 0
+      },
+      "inode" : 1,
+      "offset" : 1,
+      "pathname" : {
+         "Path" : "something (deleted)"
+      },
+      "permissions" : {
+         "executable" : true,
+         "private" : false,
+         "readable" : false,
+         "shared" : true,
+         "writable" : false
+      }
+   },
+   {
+      "address_range" : {
+         "begin" : 1,
+         "end" : 1
+      },
+      "device" : {
+         "major" : 0,
+         "minor" : 0
+      },
+      "inode" : 1,
+      "offset" : 1,
+      "pathname" : {
+         "Path" : "some\\e012thing (deleted)"
+      },
+      "permissions" : {
+         "executable" : true,
+         "private" : false,
+         "readable" : false,
+         "shared" : true,
+         "writable" : false
+      }
+   },
+   {
+      "address_range" : {
+         "begin" : 1,
+         "end" : 1
+      },
+      "device" : {
+         "major" : 0,
+         "minor" : 0
+      },
+      "inode" : 1,
+      "offset" : 1,
+      "pathname" : {
+         "OtherPseudo" : "[stack:999]"
+      },
+      "permissions" : {
+         "executable" : true,
+         "private" : false,
+         "readable" : false,
+         "shared" : true,
+         "writable" : false
+      }
+   }
+]

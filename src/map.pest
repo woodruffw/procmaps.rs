@@ -1,0 +1,23 @@
+WS = _{ " "+ }
+
+address_begin = { ASCII_HEX_DIGIT+ }
+address_end = { ASCII_HEX_DIGIT+ }
+address_range = { address_begin ~ "-" ~ address_end }
+
+permissions = {
+    ("r" | "-") ~ ("w" | "-") ~ ("x" | "-") ~ ("s" | "p")
+}
+
+offset = { ASCII_HEX_DIGIT+ }
+
+major = { ASCII_DIGIT+ }
+minor = { ASCII_DIGIT+ }
+device = { major ~ ":" ~ minor }
+
+inode = { ASCII_DIGIT+ }
+
+pathname = { ANY* }
+
+map = {
+    address_range ~ WS ~ permissions ~ WS ~ offset ~ WS ~ device ~ WS ~ inode ~ WS ~ pathname
+}

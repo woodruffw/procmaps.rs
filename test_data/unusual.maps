@@ -1,0 +1,9 @@
+0-0 ---s 0 255:2346278 0 [unknownpseudofile]
+1-1 rwxp 1 0:0 1 
+1-1 rwxs 1 0:0 1 
+1-1 r--s 1 0:0 1 
+1-1 --xs 1 0:0 1 
+1-1 --xs 1 0:0 1 something
+1-1 --xs 1 0:0 1 something (deleted)
+1-1 --xs 1 0:0 1 some\e012thing (deleted)
+1-1 --xs 1 0:0 1 [stack:999]

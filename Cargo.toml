@@ -1,0 +1,28 @@
+[package]
+name = "procmaps"
+version = "0.1.0"
+authors = ["William Woodruff <william@yossarian.net>"]
+edition = "2018"
+description = "A Rust library for handling memory maps in procfs"
+repository = "https://github.com/woodruffw/procmaps.rs"
+readme = "README.md"
+keywords = ["procfs", "linux", "memory-maps"]
+categories = ["os", "os::unix-apis", "parser-implementations"]
+
+[package.metadata.release]
+no-dev-version = true
+disable-publish = true # handled by GitHub Actions
+
+[badges]
+maintenance = { status = "actively-developed" }
+
+[dependencies]
+libc = "0.2"
+pest = "2.1"
+pest_derive = "2.1"
+phf = { version = "0.8.0", features = ["macros"] }
+serde = { version = "1.0", features = ["derive"] }
+
+[dev-dependencies]
+serde_json = "1.0"
+glob = "0.3"

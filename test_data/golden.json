@@ -1,0 +1,536 @@
+[
+   {
+      "address_range" : {
+         "begin" : 94630295556096,
+         "end" : 94630295564288
+      },
+      "device" : {
+         "major" : 8,
+         "minor" : 11
+      },
+      "inode" : 6553896,
+      "offset" : 0,
+      "pathname" : {
+         "Path" : "/bin/cat"
+      },
+      "permissions" : {
+         "executable" : false,
+         "private" : true,
+         "readable" : true,
+         "shared" : false,
+         "writable" : false
+      }
+   },
+   {
+      "address_range" : {
+         "begin" : 94630295564288,
+         "end" : 94630295584768
+      },
+      "device" : {
+         "major" : 8,
+         "minor" : 11
+      },
+      "inode" : 6553896,
+      "offset" : 8192,
+      "pathname" : {
+         "Path" : "/bin/cat"
+      },
+      "permissions" : {
+         "executable" : true,
+         "private" : true,
+         "readable" : true,
+         "shared" : false,
+         "writable" : false
+      }
+   },
+   {
+      "address_range" : {
+         "begin" : 94630295584768,
+         "end" : 94630295597056
+      },
+      "device" : {
+         "major" : 8,
+         "minor" : 11
+      },
+      "inode" : 6553896,
+      "offset" : 28672,
+      "pathname" : {
+         "Path" : "/bin/cat"
+      },
+      "permissions" : {
+         "executable" : false,
+         "private" : true,
+         "readable" : true,
+         "shared" : false,
+         "writable" : false
+      }
+   },
+   {
+      "address_range" : {
+         "begin" : 94630295597056,
+         "end" : 94630295601152
+      },
+      "device" : {
+         "major" : 8,
+         "minor" : 11
+      },
+      "inode" : 6553896,
+      "offset" : 36864,
+      "pathname" : {
+         "Path" : "/bin/cat"
+      },
+      "permissions" : {
+         "executable" : false,
+         "private" : true,
+         "readable" : true,
+         "shared" : false,
+         "writable" : false
+      }
+   },
+   {
+      "address_range" : {
+         "begin" : 94630295601152,
+         "end" : 94630295605248
+      },
+      "device" : {
+         "major" : 8,
+         "minor" : 11
+      },
+      "inode" : 6553896,
+      "offset" : 40960,
+      "pathname" : {
+         "Path" : "/bin/cat"
+      },
+      "permissions" : {
+         "executable" : false,
+         "private" : true,
+         "readable" : true,
+         "shared" : false,
+         "writable" : true
+      }
+   },
+   {
+      "address_range" : {
+         "begin" : 94630297882624,
+         "end" : 94630298017792
+      },
+      "device" : {
+         "major" : 0,
+         "minor" : 0
+      },
+      "inode" : 0,
+      "offset" : 0,
+      "pathname" : "Heap",
+      "permissions" : {
+         "executable" : false,
+         "private" : true,
+         "readable" : true,
+         "shared" : false,
+         "writable" : true
+      }
+   },
+   {
+      "address_range" : {
+         "begin" : 140662474899456,
+         "end" : 140662480601088
+      },
+      "device" : {
+         "major" : 8,
+         "minor" : 11
+      },
+      "inode" : 4458550,
+      "offset" : 0,
+      "pathname" : {
+         "Path" : "/usr/lib/locale/locale-archive"
+      },
+      "permissions" : {
+         "executable" : false,
+         "private" : true,
+         "readable" : true,
+         "shared" : false,
+         "writable" : false
+      }
+   },
+   {
+      "address_range" : {
+         "begin" : 140662480601088,
+         "end" : 140662480752640
+      },
+      "device" : {
+         "major" : 8,
+         "minor" : 11
+      },
+      "inode" : 2621641,
+      "offset" : 0,
+      "pathname" : {
+         "Path" : "/lib/x86_64-linux-gnu/libc-2.31.so"
+      },
+      "permissions" : {
+         "executable" : false,
+         "private" : true,
+         "readable" : true,
+         "shared" : false,
+         "writable" : false
+      }
+   },
+   {
+      "address_range" : {
+         "begin" : 140662480752640,
+         "end" : 140662482292736
+      },
+      "device" : {
+         "major" : 8,
+         "minor" : 11
+      },
+      "inode" : 2621641,
+      "offset" : 151552,
+      "pathname" : {
+         "Path" : "/lib/x86_64-linux-gnu/libc-2.31.so"
+      },
+      "permissions" : {
+         "executable" : true,
+         "private" : true,
+         "readable" : true,
+         "shared" : false,
+         "writable" : false
+      }
+   },
+   {
+      "address_range" : {
+         "begin" : 140662482292736,
+         "end" : 140662482595840
+      },
+      "device" : {
+         "major" : 8,
+         "minor" : 11
+      },
+      "inode" : 2621641,
+      "offset" : 1691648,
+      "pathname" : {
+         "Path" : "/lib/x86_64-linux-gnu/libc-2.31.so"
+      },
+      "permissions" : {
+         "executable" : false,
+         "private" : true,
+         "readable" : true,
+         "shared" : false,
+         "writable" : false
+      }
+   },
+   {
+      "address_range" : {
+         "begin" : 140662482595840,
+         "end" : 140662482599936
+      },
+      "device" : {
+         "major" : 8,
+         "minor" : 11
+      },
+      "inode" : 2621641,
+      "offset" : 1994752,
+      "pathname" : {
+         "Path" : "/lib/x86_64-linux-gnu/libc-2.31.so"
+      },
+      "permissions" : {
+         "executable" : false,
+         "private" : true,
+         "readable" : false,
+         "shared" : false,
+         "writable" : false
+      }
+   },
+   {
+      "address_range" : {
+         "begin" : 140662482599936,
+         "end" : 140662482612224
+      },
+      "device" : {
+         "major" : 8,
+         "minor" : 11
+      },
+      "inode" : 2621641,
+      "offset" : 1994752,
+      "pathname" : {
+         "Path" : "/lib/x86_64-linux-gnu/libc-2.31.so"
+      },
+      "permissions" : {
+         "executable" : false,
+         "private" : true,
+         "readable" : true,
+         "shared" : false,
+         "writable" : false
+      }
+   },
+   {
+      "address_range" : {
+         "begin" : 140662482612224,
+         "end" : 140662482624512
+      },
+      "device" : {
+         "major" : 8,
+         "minor" : 11
+      },
+      "inode" : 2621641,
+      "offset" : 2007040,
+      "pathname" : {
+         "Path" : "/lib/x86_64-linux-gnu/libc-2.31.so"
+      },
+      "permissions" : {
+         "executable" : false,
+         "private" : true,
+         "readable" : true,
+         "shared" : false,
+         "writable" : true
+      }
+   },
+   {
+      "address_range" : {
+         "begin" : 140662482624512,
+         "end" : 140662482640896
+      },
+      "device" : {
+         "major" : 0,
+         "minor" : 0
+      },
+      "inode" : 0,
+      "offset" : 0,
+      "pathname" : "Mmap",
+      "permissions" : {
+         "executable" : false,
+         "private" : true,
+         "readable" : true,
+         "shared" : false,
+         "writable" : true
+      }
+   },
+   {
+      "address_range" : {
+         "begin" : 140662482681856,
+         "end" : 140662482829312
+      },
+      "device" : {
+         "major" : 0,
+         "minor" : 0
+      },
+      "inode" : 0,
+      "offset" : 0,
+      "pathname" : "Mmap",
+      "permissions" : {
+         "executable" : false,
+         "private" : true,
+         "readable" : true,
+         "shared" : false,
+         "writable" : true
+      }
+   },
+   {
+      "address_range" : {
+         "begin" : 140662482829312,
+         "end" : 140662482833408
+      },
+      "device" : {
+         "major" : 8,
+         "minor" : 11
+      },
+      "inode" : 2621496,
+      "offset" : 0,
+      "pathname" : {
+         "Path" : "/lib/x86_64-linux-gnu/ld-2.31.so"
+      },
+      "permissions" : {
+         "executable" : false,
+         "private" : true,
+         "readable" : true,
+         "shared" : false,
+         "writable" : false
+      }
+   },
+   {
+      "address_range" : {
+         "begin" : 140662482833408,
+         "end" : 140662482976768
+      },
+      "device" : {
+         "major" : 8,
+         "minor" : 11
+      },
+      "inode" : 2621496,
+      "offset" : 4096,
+      "pathname" : {
+         "Path" : "/lib/x86_64-linux-gnu/ld-2.31.so"
+      },
+      "permissions" : {
+         "executable" : true,
+         "private" : true,
+         "readable" : true,
+         "shared" : false,
+         "writable" : false
+      }
+   },
+   {
+      "address_range" : {
+         "begin" : 140662482976768,
+         "end" : 140662483009536
+      },
+      "device" : {
+         "major" : 8,
+         "minor" : 11
+      },
+      "inode" : 2621496,
+      "offset" : 147456,
+      "pathname" : {
+         "Path" : "/lib/x86_64-linux-gnu/ld-2.31.so"
+      },
+      "permissions" : {
+         "executable" : false,
+         "private" : true,
+         "readable" : true,
+         "shared" : false,
+         "writable" : false
+      }
+   },
+   {
+      "address_range" : {
+         "begin" : 140662483013632,
+         "end" : 140662483017728
+      },
+      "device" : {
+         "major" : 8,
+         "minor" : 11
+      },
+      "inode" : 2621496,
+      "offset" : 180224,
+      "pathname" : {
+         "Path" : "/lib/x86_64-linux-gnu/ld-2.31.so"
+      },
+      "permissions" : {
+         "executable" : false,
+         "private" : true,
+         "readable" : true,
+         "shared" : false,
+         "writable" : false
+      }
+   },
+   {
+      "address_range" : {
+         "begin" : 140662483017728,
+         "end" : 140662483021824
+      },
+      "device" : {
+         "major" : 8,
+         "minor" : 11
+      },
+      "inode" : 2621496,
+      "offset" : 184320,
+      "pathname" : {
+         "Path" : "/lib/x86_64-linux-gnu/ld-2.31.so"
+      },
+      "permissions" : {
+         "executable" : false,
+         "private" : true,
+         "readable" : true,
+         "shared" : false,
+         "writable" : true
+      }
+   },
+   {
+      "address_range" : {
+         "begin" : 140662483021824,
+         "end" : 140662483025920
+      },
+      "device" : {
+         "major" : 0,
+         "minor" : 0
+      },
+      "inode" : 0,
+      "offset" : 0,
+      "pathname" : "Mmap",
+      "permissions" : {
+         "executable" : false,
+         "private" : true,
+         "readable" : true,
+         "shared" : false,
+         "writable" : true
+      }
+   },
+   {
+      "address_range" : {
+         "begin" : 140737007861760,
+         "end" : 140737007996928
+      },
+      "device" : {
+         "major" : 0,
+         "minor" : 0
+      },
+      "inode" : 0,
+      "offset" : 0,
+      "pathname" : "Stack",
+      "permissions" : {
+         "executable" : false,
+         "private" : true,
+         "readable" : true,
+         "shared" : false,
+         "writable" : true
+      }
+   },
+   {
+      "address_range" : {
+         "begin" : 140737008041984,
+         "end" : 140737008054272
+      },
+      "device" : {
+         "major" : 0,
+         "minor" : 0
+      },
+      "inode" : 0,
+      "offset" : 0,
+      "pathname" : "Vvar",
+      "permissions" : {
+         "executable" : false,
+         "private" : true,
+         "readable" : true,
+         "shared" : false,
+         "writable" : false
+      }
+   },
+   {
+      "address_range" : {
+         "begin" : 140737008054272,
+         "end" : 140737008058368
+      },
+      "device" : {
+         "major" : 0,
+         "minor" : 0
+      },
+      "inode" : 0,
+      "offset" : 0,
+      "pathname" : "Vdso",
+      "permissions" : {
+         "executable" : true,
+         "private" : true,
+         "readable" : true,
+         "shared" : false,
+         "writable" : false
+      }
+   },
+   {
+      "address_range" : {
+         "begin" : 18446744073699065856,
+         "end" : 18446744073699069952
+      },
+      "device" : {
+         "major" : 0,
+         "minor" : 0
+      },
+      "inode" : 0,
+      "offset" : 0,
+      "pathname" : "Vsyscall",
+      "permissions" : {
+         "executable" : true,
+         "private" : true,
+         "readable" : false,
+         "shared" : false,
+         "writable" : false
+      }
+   }
+]
