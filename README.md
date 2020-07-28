@@ -7,17 +7,20 @@ procmaps.rs
 maps that Linux (and some other Unices) expose via `/proc/<pid>/maps` with
 a pleasant structure.
 
+I wrote it before realizing that [procmaps](https://github.com/jabedude/procmaps) already exists.
+You should probably use that one instead, since it's nearly identical.
+
 A quick sample:
 
 ```rust
-let maps = procmaps::from_pid(9001)?;
+let maps = rsprocmaps::from_pid(9001)?;
 
 for map in maps {
   println!("{} executable? {}", map.address_range, map.permissions.executable);
 }
 ```
 
-Full documentation is available on [docs.rs](https://docs.rs/crate/procmaps).
+Full documentation is available on [docs.rs](https://docs.rs/crate/rsprocmaps).
 
 ## Goals
 

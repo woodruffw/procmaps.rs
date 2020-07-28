@@ -1,5 +1,5 @@
 [package]
-name = "procmaps"
+name = "rsprocmaps"
 version = "0.1.2"
 authors = ["William Woodruff <william@yossarian.net>"]
 edition = "2018"
