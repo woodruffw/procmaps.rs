@@ -6,6 +6,7 @@ edition = "2018"
 description = "A Rust library for handling memory maps in procfs"
 repository = "https://github.com/woodruffw/procmaps.rs"
 readme = "README.md"
+license = "MIT"
 keywords = ["procfs", "linux", "memory-maps"]
 categories = ["os", "os::unix-apis", "parser-implementations"]
 
