@@ -7,3 +7,4 @@
 1-1 --xs 1 0:0 1 something (deleted)
 1-1 --xs 1 0:0 1 some\e012thing (deleted)
 1-1 --xs 1 0:0 1 [stack:999]
+255-256 -wxp 1 ff:ff 1234 foo

@@ -10,8 +10,8 @@ permissions = {
 
 offset = { ASCII_HEX_DIGIT+ }
 
-major = { ASCII_DIGIT+ }
-minor = { ASCII_DIGIT+ }
+major = { ASCII_HEX_DIGIT+ }
+minor = { ASCII_HEX_DIGIT+ }
 device = { major ~ ":" ~ minor }
 
 inode = { ASCII_DIGIT+ }
