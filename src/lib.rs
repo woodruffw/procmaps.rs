@@ -196,8 +196,8 @@ fn parse_map(line: &str) -> Result<Map, Error> {
             Rule::device => {
                 let mut device = entry.into_inner();
 
-                map.device.major = device.next().unwrap().as_str().parse()?;
-                map.device.minor = device.next().unwrap().as_str().parse()?;
+                map.device.major = u64::from_str_radix(device.next().unwrap().as_str(), 16)?;
+                map.device.minor = u64::from_str_radix(device.next().unwrap().as_str(), 16)?;
             }
             Rule::inode => {
                 map.inode = entry.as_str().parse()?;
@@ -256,7 +256,7 @@ mod tests {
         assert_eq!(map.offset, 0);
 
         assert_eq!(map.device.major, 8);
-        assert_eq!(map.device.minor, 11);
+        assert_eq!(map.device.minor, 17);
 
         assert_eq!(map.inode, 6572575);
 
