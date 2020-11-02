@@ -212,6 +212,7 @@ impl Map {
     }
 }
 
+/// A wrapper structure for consuming individual `Map`s from a reader.
 pub struct Maps<T: BufRead> {
     reader: T,
 }
@@ -237,6 +238,7 @@ impl<T: BufRead> Iterator for Maps<T> {
 }
 
 impl<T: BufRead> Maps<T> {
+    /// Creates a new `Maps` from the given `reader`.
     pub fn new(reader: T) -> Maps<T> {
         Maps { reader }
     }
