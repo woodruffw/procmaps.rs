@@ -242,13 +242,13 @@ impl<T: BufRead> Maps<T> {
     }
 }
 
-/// Returns a vector of maps for the given pid.
+/// Returns an iterable `Maps` for the given pid.
 pub fn from_pid(pid: pid_t) -> Result<Maps<BufReader<File>>, Error> {
     let path = Path::new("/proc").join(pid.to_string()).join("maps");
     from_path(&path)
 }
 
-/// Returns a vector of maps parsed from the given file.
+/// Returns an iterable `Maps` parsed from the given file.
 pub fn from_path<P: AsRef<Path>>(path: P) -> Result<Maps<BufReader<File>>, Error> {
     let reader = {
         let f = File::open(path)?;
@@ -258,7 +258,7 @@ pub fn from_path<P: AsRef<Path>>(path: P) -> Result<Maps<BufReader<File>>, Error
     Ok(Maps::new(reader))
 }
 
-/// Returns a vector of maps parsed from the given string.
+/// Returns an iterable `Maps` parsed from the given string.
 pub fn from_str<'a>(maps_data: &'a str) -> Maps<&'a [u8]> {
     Maps::new(maps_data.as_bytes())
 }
