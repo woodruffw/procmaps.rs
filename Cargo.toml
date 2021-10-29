@@ -22,7 +22,7 @@ maintenance = { status = "actively-developed" }
 libc = "0.2"
 pest = "2.1"
 pest_derive = "2.1"
-phf = { version = "0.8.0", features = ["macros"] }
+phf = { version = "0.10.0", features = ["macros"] }
 serde = { version = "1.0", features = ["derive"] }
 
 [dev-dependencies]
