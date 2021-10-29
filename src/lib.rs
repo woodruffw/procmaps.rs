@@ -261,18 +261,18 @@ pub fn from_path<P: AsRef<Path>>(path: P) -> Result<Maps<BufReader<File>>, Error
 }
 
 /// Returns an iterable `Maps` parsed from the given string.
-pub fn from_str<'a>(maps_data: &'a str) -> Maps<&'a [u8]> {
+pub fn from_str(maps_data: &str) -> Maps<&[u8]> {
     Maps::new(maps_data.as_bytes())
 }
 
 #[cfg(test)]
 mod tests {
-    use super::*;
-
     use std::fs;
 
     use glob::glob;
     use serde_json;
+
+    use super::*;
 
     #[test]
     fn test_parse_map() {
