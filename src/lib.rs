@@ -1,3 +1,9 @@
+//! A small Rust library for parsing `/proc/<pid>/maps`.
+
+#![deny(rustdoc::broken_intra_doc_links)]
+#![allow(clippy::redundant_field_names)]
+#![forbid(unsafe_code)]
+
 use std::fmt;
 use std::fs::File;
 use std::io::{BufRead, BufReader};
@@ -27,22 +33,32 @@ struct MapParser;
 /// Represents the variants of the "pathname" field in a map.
 #[derive(Debug, Clone, PartialEq, Deserialize, Serialize)]
 pub enum Pathname {
+    /// This map is the initial process's (i.e., main thread's) stack.
     Stack,
+    /// This map contains the vDSO. See `man 7 vdso`.
     Vdso,
+    /// This map contains the VVAR page.
     Vvar,
+    /// This map contains the VSYSCALL page(s).
     Vsyscall,
+    /// This map is the process's heap.
     Heap,
+    /// This map was created by a call to `mmap`.
     Mmap,
+    /// This map looks like another, unparsed, pseudo-path. See `man 5 proc`.
     OtherPseudo(String),
     // NOTE(ww): This should really be a PathBuf, but pest uses UTF-8 strings.
     // Better hope your paths are valid UTF-8!
+    /// This map appears to correspond to a filesystem path.
     Path(String),
 }
 
 /// Represents the address range of a map.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct AddressRange {
+    /// The (inclusive) start of the address range.
     pub begin: u64,
+    /// The (exclusive) end of the address range.
     pub end: u64,
 }
 
@@ -55,10 +71,15 @@ impl fmt::Display for AddressRange {
 /// Represents the permissions associated with a map.
 #[derive(Debug, Default, Deserialize, Serialize, PartialEq)]
 pub struct Permissions {
+    /// Is this map readable?
     pub readable: bool,
+    /// Is this map writable?
     pub writable: bool,
+    /// Is this map executable?
     pub executable: bool,
+    /// Is this map shared?
     pub shared: bool,
+    /// Is this map private (i.e., copy-on-write)?
     pub private: bool,
 }
 
@@ -97,7 +118,9 @@ impl fmt::Display for Permissions {
 /// Represents the device associated with a map.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Device {
+    /// The device's major number.
     pub major: u64,
+    /// The device's minor number.
     pub minor: u64,
 }
 

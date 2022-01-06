@@ -1,3 +1,5 @@
+//! Error types for `rsprocmaps`.
+
 use std::error;
 use std::fmt;
 use std::io;
@@ -7,13 +9,17 @@ use pest::error::Error as PestError;
 
 use crate::Rule;
 
+/// An enumeration of possible error states for `rsprocmaps`.
 #[derive(Debug)]
 pub enum Error {
+    /// An I/O error.
     Io(io::Error),
+    /// A general parsing error.
     ParseError(PestError<Rule>),
     // NOTE(ww): ParseIntError is more general than just numbers that don't
     // fit into a particular width, but we handle all of its other parsing issues
     // at the pest/actual parsing level.
+    /// An integer-width parsing error.
     WidthError(num::ParseIntError),
 }
 
