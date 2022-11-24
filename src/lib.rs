@@ -31,7 +31,7 @@ static PSUEDO_PATH_MAP: phf::Map<&'static str, Pathname> = phf_map! {
 struct MapParser;
 
 /// Represents the variants of the "pathname" field in a map.
-#[derive(Debug, Clone, PartialEq, Deserialize, Serialize)]
+#[derive(Debug, Clone, PartialEq, Eq, Deserialize, Serialize)]
 pub enum Pathname {
     /// This map is the initial process's (i.e., main thread's) stack.
     Stack,
@@ -54,7 +54,7 @@ pub enum Pathname {
 }
 
 /// Represents the address range of a map.
-#[derive(Debug, Deserialize, Serialize, PartialEq)]
+#[derive(Debug, Deserialize, Serialize, PartialEq, Eq)]
 pub struct AddressRange {
     /// The (inclusive) start of the address range.
     pub begin: u64,
@@ -69,7 +69,7 @@ impl fmt::Display for AddressRange {
 }
 
 /// Represents the permissions associated with a map.
-#[derive(Debug, Default, Deserialize, Serialize, PartialEq)]
+#[derive(Debug, Default, Deserialize, Serialize, PartialEq, Eq)]
 pub struct Permissions {
     /// Is this map readable?
     pub readable: bool,
@@ -116,7 +116,7 @@ impl fmt::Display for Permissions {
 }
 
 /// Represents the device associated with a map.
-#[derive(Debug, Deserialize, Serialize, PartialEq)]
+#[derive(Debug, Deserialize, Serialize, PartialEq, Eq)]
 pub struct Device {
     /// The device's major number.
     pub major: u64,
@@ -131,7 +131,7 @@ impl fmt::Display for Device {
 }
 
 /// Represents a map, i.e. a region of program memory.
-#[derive(Debug, Deserialize, Serialize, PartialEq)]
+#[derive(Debug, Deserialize, Serialize, PartialEq, Eq)]
 pub struct Map {
     /// The map's address range.
     pub address_range: AddressRange,
@@ -293,7 +293,6 @@ mod tests {
     use std::fs;
 
     use glob::glob;
-    use serde_json;
 
     use super::*;
 

@@ -14,8 +14,10 @@ use crate::Rule;
 pub enum Error {
     /// An I/O error.
     Io(io::Error),
+    // NOTE(ww): PestError<Rule> is pretty big, so we box it to keep
+    // the surrounding error type small.
     /// A general parsing error.
-    ParseError(PestError<Rule>),
+    ParseError(Box<PestError<Rule>>),
     // NOTE(ww): ParseIntError is more general than just numbers that don't
     // fit into a particular width, but we handle all of its other parsing issues
     // at the pest/actual parsing level.
@@ -31,7 +33,7 @@ impl From<io::Error> for Error {
 
 impl From<PestError<Rule>> for Error {
     fn from(err: PestError<Rule>) -> Error {
-        Error::ParseError(err)
+        Error::ParseError(Box::new(err))
     }
 }
 
