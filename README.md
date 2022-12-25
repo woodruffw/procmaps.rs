@@ -1,7 +1,7 @@
 procmaps.rs
 ===========
 
-[![Build Status](https://img.shields.io/github/workflow/status/woodruffw/procmaps.rs/CI/master)](https://github.com/woodruffw/procmaps.rs/actions?query=workflow%3ACI)
+[![CI](https://github.com/woodruffw/procmaps.rs/actions/workflows/ci.yml/badge.svg)](https://github.com/woodruffw/procmaps.rs/actions/workflows/ci.yml)
 
 *procmaps.rs* is a (very) small Rust library with one job: parsing the memory
 maps that Linux (and some other Unices) expose via `/proc/<pid>/maps` with
