@@ -1,6 +1,6 @@
 [package]
 name = "rsprocmaps"
-version = "0.3.1"
+version = "0.3.2-rc.1"
 authors = ["William Woodruff <william@yossarian.net>"]
 edition = "2018"
 description = "A Rust library for handling memory maps in procfs"
