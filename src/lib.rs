@@ -270,7 +270,7 @@ impl<T: BufRead> Maps<T> {
 /// Returns an iterable `Maps` for the given pid.
 pub fn from_pid(pid: pid_t) -> Result<Maps<BufReader<File>>, Error> {
     let path = Path::new("/proc").join(pid.to_string()).join("maps");
-    from_path(&path)
+    from_path(path)
 }
 
 /// Returns an iterable `Maps` parsed from the given file.
