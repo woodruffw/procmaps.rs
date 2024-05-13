@@ -6,9 +6,9 @@
 
 use std::fmt;
 use std::fs::File;
+use std::io::Lines;
 use std::io::{BufRead, BufReader};
 use std::path::Path;
-use std::str::Lines;
 
 use libc::pid_t;
 use pest::Parser as ParserTrait;
@@ -237,22 +237,29 @@ impl Map {
 }
 
 /// A wrapper structure for consuming individual `Map`s from a reader.
-pub struct MapsLines<'a> {
-    lines: Lines<'a>,
+pub struct MapsLines<T> {
+    lines: Lines<T>,
 }
 
-impl<'a> MapsLines<'a> {
+impl<T> MapsLines<T> {
     /// Creates a new `Maps` from the given `reader`.
-    pub fn new(lines: Lines<'a>) -> MapsLines<'a> {
+    pub fn new(lines: Lines<T>) -> MapsLines<T> {
         MapsLines { lines }
     }
 }
 
-impl<'a> Iterator for MapsLines<'a> {
+impl<T> Iterator for MapsLines<T>
+where
+    T: BufRead,
+{
     type Item = Result<Map, Error>;
 
     fn next(&mut self) -> Option<Self::Item> {
-        self.lines.next().map(Map::parse)
+        match self.lines.next() {
+            Some(Ok(line)) => Some(Map::parse(&line)),
+            Some(Err(e)) => Some(Err(e.into())),
+            None => None,
+        }
     }
 }
 
@@ -310,7 +317,7 @@ pub fn from_str(maps_data: &str) -> Maps<&[u8]> {
 }
 
 /// Returns an iterable `Maps` parsed from the given [Lines].
-pub fn from_lines(maps_lines: Lines) -> MapsLines {
+pub fn from_lines<T>(maps_lines: Lines<T>) -> MapsLines<T> {
     MapsLines::new(maps_lines)
 }
 
