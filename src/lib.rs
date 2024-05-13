@@ -8,6 +8,7 @@ use std::fmt;
 use std::fs::File;
 use std::io::{BufRead, BufReader};
 use std::path::Path;
+use std::str::Lines;
 
 use libc::pid_t;
 use pest::Parser as ParserTrait;
@@ -236,8 +237,35 @@ impl Map {
 }
 
 /// A wrapper structure for consuming individual `Map`s from a reader.
+pub struct MapsLines<'a> {
+    lines: Lines<'a>,
+}
+
+impl<'a> MapsLines<'a> {
+    /// Creates a new `Maps` from the given `reader`.
+    pub fn new(lines: Lines<'a>) -> MapsLines<'a> {
+        MapsLines { lines }
+    }
+}
+
+impl<'a> Iterator for MapsLines<'a> {
+    type Item = Result<Map, Error>;
+
+    fn next(&mut self) -> Option<Self::Item> {
+        self.lines.next().map(Map::parse)
+    }
+}
+
+/// A wrapper structure for consuming individual `Map`s from a reader.
 pub struct Maps<T: BufRead> {
     reader: T,
+}
+
+impl<T: BufRead> Maps<T> {
+    /// Creates a new `Maps` from the given `reader`.
+    pub fn new(reader: T) -> Maps<T> {
+        Maps { reader }
+    }
 }
 
 impl<T: BufRead> Iterator for Maps<T> {
@@ -260,13 +288,6 @@ impl<T: BufRead> Iterator for Maps<T> {
     }
 }
 
-impl<T: BufRead> Maps<T> {
-    /// Creates a new `Maps` from the given `reader`.
-    pub fn new(reader: T) -> Maps<T> {
-        Maps { reader }
-    }
-}
-
 /// Returns an iterable `Maps` for the given pid.
 pub fn from_pid(pid: pid_t) -> Result<Maps<BufReader<File>>, Error> {
     let path = Path::new("/proc").join(pid.to_string()).join("maps");
@@ -286,6 +307,11 @@ pub fn from_path<P: AsRef<Path>>(path: P) -> Result<Maps<BufReader<File>>, Error
 /// Returns an iterable `Maps` parsed from the given string.
 pub fn from_str(maps_data: &str) -> Maps<&[u8]> {
     Maps::new(maps_data.as_bytes())
+}
+
+/// Returns an iterable `Maps` parsed from the given [Lines].
+pub fn from_lines(maps_lines: Lines) -> MapsLines {
+    MapsLines::new(maps_lines)
 }
 
 #[cfg(test)]
