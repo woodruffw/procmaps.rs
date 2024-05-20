@@ -125,13 +125,6 @@ pub struct Device {
     pub minor: u64,
 }
 
-impl Device {
-    /// Returns the device's major and minor numbers as a single u64.
-    pub fn as_u64(&self) -> u64 {
-        (self.major << 20) | self.minor
-    }
-}
-
 impl fmt::Display for Device {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "{:02}-{:02}", self.major, self.minor)
