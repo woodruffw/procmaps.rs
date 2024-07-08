@@ -6,6 +6,7 @@
 
 use std::fmt;
 use std::fs::File;
+use std::io::Lines;
 use std::io::{BufRead, BufReader};
 use std::path::Path;
 
@@ -236,8 +237,42 @@ impl Map {
 }
 
 /// A wrapper structure for consuming individual `Map`s from a reader.
+pub struct MapsLines<T> {
+    lines: Lines<T>,
+}
+
+impl<T> MapsLines<T> {
+    /// Creates a new `Maps` from the given `reader`.
+    pub fn new(lines: Lines<T>) -> MapsLines<T> {
+        MapsLines { lines }
+    }
+}
+
+impl<T> Iterator for MapsLines<T>
+where
+    T: BufRead,
+{
+    type Item = Result<Map, Error>;
+
+    fn next(&mut self) -> Option<Self::Item> {
+        match self.lines.next() {
+            Some(Ok(line)) => Some(Map::parse(&line)),
+            Some(Err(e)) => Some(Err(e.into())),
+            None => None,
+        }
+    }
+}
+
+/// A wrapper structure for consuming individual `Map`s from a reader.
 pub struct Maps<T: BufRead> {
     reader: T,
+}
+
+impl<T: BufRead> Maps<T> {
+    /// Creates a new `Maps` from the given `reader`.
+    pub fn new(reader: T) -> Maps<T> {
+        Maps { reader }
+    }
 }
 
 impl<T: BufRead> Iterator for Maps<T> {
@@ -260,13 +295,6 @@ impl<T: BufRead> Iterator for Maps<T> {
     }
 }
 
-impl<T: BufRead> Maps<T> {
-    /// Creates a new `Maps` from the given `reader`.
-    pub fn new(reader: T) -> Maps<T> {
-        Maps { reader }
-    }
-}
-
 /// Returns an iterable `Maps` for the given pid.
 pub fn from_pid(pid: pid_t) -> Result<Maps<BufReader<File>>, Error> {
     let path = Path::new("/proc").join(pid.to_string()).join("maps");
@@ -286,6 +314,11 @@ pub fn from_path<P: AsRef<Path>>(path: P) -> Result<Maps<BufReader<File>>, Error
 /// Returns an iterable `Maps` parsed from the given string.
 pub fn from_str(maps_data: &str) -> Maps<&[u8]> {
     Maps::new(maps_data.as_bytes())
+}
+
+/// Returns an iterable `Maps` parsed from the given [Lines].
+pub fn from_lines<T>(maps_lines: Lines<T>) -> MapsLines<T> {
+    MapsLines::new(maps_lines)
 }
 
 #[cfg(test)]
